@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:src="@drawable/mainscreenthree"
+    >
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mainscreenthree" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/titletwo"></ImageView>
+
+    <ImageButton
+        android:id="@+id/image_button_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="130dp"
+        android:layout_marginBottom="40dp"
+        android:background="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/suhelpbutton"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/image_button_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="289dp"
+        android:layout_marginBottom="41dp"
+        android:background="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/susettingbutton"></ImageButton>
+
+    <ImageButton
+        android:id="@+id/image_button_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="117dp"
+        android:layout_marginBottom="38dp"
+        android:background="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/suplaybutton"></ImageButton>
+
+    <ImageView
+        android:id="@+id/image_volume_on"
+        android:layout_width="147dp"
+        android:layout_height="153dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-35dp"
+        android:layout_marginLeft="-35dp"
+        android:layout_marginTop="-34dp"
+        android:layout_marginRight="571dp"
+        android:layout_marginBottom="270dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/volume_on" />
+
+</RelativeLayout>

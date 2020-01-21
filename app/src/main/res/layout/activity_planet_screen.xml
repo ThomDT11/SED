@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mainscreenthree" />
+
+    <ImageView
+        android:id="@+id/arrow_next"
+        android:layout_width="70dp"
+        android:layout_height="138dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="622dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-35dp"
+        android:layout_marginEnd="-9dp"
+        android:layout_marginRight="-9dp"
+        android:layout_marginBottom="286dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/arrow" />
+
+
+    <ImageView
+        android:id="@+id/arrow_back2"
+        android:layout_width="70dp"
+        android:layout_height="138dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="622dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="-35dp"
+        android:layout_marginStart="-9dp"
+        android:layout_marginLeft="-9dp"
+        android:layout_marginBottom="286dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/arrowtwo" />
+
+    <ImageButton
+        android:id="@+id/image_planet1_button"
+        android:layout_width="102dp"
+        android:layout_height="98dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginRight="528dp"
+        android:layout_marginBottom="223dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/earth"></ImageButton>
+
+    <TextView
+        android:id="@+id/stageone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginRight="559dp"
+        android:layout_marginBottom="185dp"
+        android:fontFamily="@font/spaceranger"
+        android:text="Stage 1"
+        android:textColor="#FF9800"
+        android:textColorLink="#FF5722"
+        android:textSize="30sp" />
+
+    <ImageButton
+        android:id="@+id/image_planet2_button"
+        android:layout_width="102dp"
+        android:layout_height="98dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="363dp"
+        android:layout_marginBottom="223dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/pink_ring_planet"></ImageButton>
+
+    <TextView
+        android:id="@+id/stagetwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="201dp"
+        android:layout_marginRight="354dp"
+        android:layout_marginBottom="185dp"
+        android:fontFamily="@font/spaceranger"
+        android:text="Stage 2"
+        android:textColor="#FF9800"
+        android:textColorLink="#FF5722"
+        android:textSize="30sp" />
+
+    <ImageButton
+        android:id="@+id/image_planet3_button"
+        android:layout_width="102dp"
+        android:layout_height="98dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="204dp"
+        android:layout_marginBottom="223dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/yellow_ring_planet"></ImageButton>
+
+    <TextView
+        android:id="@+id/stagethree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="362dp"
+        android:layout_marginRight="229dp"
+        android:layout_marginBottom="185dp"
+        android:fontFamily="@font/spaceranger"
+        android:text="Stage 3"
+        android:textColor="#FF9800"
+        android:textColorLink="#FF5722"
+        android:textSize="30sp" />
+
+    <ImageButton
+        android:id="@+id/image_planet4_button"
+        android:layout_width="102dp"
+        android:layout_height="98dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="223dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/green_pink_planet"></ImageButton>
+
+    <TextView
+        android:id="@+id/stagefour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="517dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginBottom="185dp"
+        android:fontFamily="@font/spaceranger"
+        android:text="Stage 4"
+        android:textColor="#FF9800"
+        android:textColorLink="#FF5722"
+        android:textSize="30sp" />
+
+    <ImageButton
+        android:id="@+id/image_planet5_button"
+        android:layout_width="102dp"
+        android:layout_height="98dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginRight="531dp"
+        android:layout_marginBottom="80dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/gold_planet"></ImageButton>
+
+    <TextView
+        android:id="@+id/stagefive"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="511dp"
+        android:layout_marginBottom="44dp"
+        android:fontFamily="@font/spaceranger"
+        android:text="Stage 5"
+        android:textColor="#FF9800"
+        android:textColorLink="#FF5722"
+        android:textSize="30sp" />
+
+    <ImageButton
+        android:id="@+id/image_planet6_button"
+        android:layout_width="102dp"
+        android:layout_height="98dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="362dp"
+        android:layout_marginBottom="80dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/mud_planet"></ImageButton>
+
+    <TextView
+        android:id="@+id/stagesix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="201dp"
+        android:layout_marginRight="350dp"
+        android:layout_marginBottom="44dp"
+        android:fontFamily="@font/spaceranger"
+        android:text="Stage 6"
+        android:textColor="#FF9800"
+        android:textColorLink="#FF5722"
+        android:textSize="30sp" />
+
+    <ImageButton
+        android:id="@+id/image_planet7_button"
+        android:layout_width="102dp"
+        android:layout_height="98dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="203dp"
+        android:layout_marginBottom="80dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/tech_planet"></ImageButton>
+
+    <TextView
+        android:id="@+id/stageseven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="362dp"
+        android:layout_marginRight="191dp"
+        android:layout_marginBottom="44dp"
+        android:fontFamily="@font/spaceranger"
+        android:text="Stage 7"
+        android:textColor="#FF9800"
+        android:textColorLink="#FF5722"
+        android:textSize="30sp" />
+
+    <ImageButton
+        android:id="@+id/image_planet8_button"
+        android:layout_width="102dp"
+        android:layout_height="98dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="49dp"
+        android:layout_marginBottom="80dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/orange_ring_planet"></ImageButton>
+
+    <TextView
+        android:id="@+id/stageeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="517dp"
+        android:layout_marginRight="34dp"
+        android:layout_marginBottom="44dp"
+        android:fontFamily="@font/spaceranger"
+        android:text="Stage 8"
+        android:textColor="#FF9800"
+        android:textColorLink="#FF5722"
+        android:textSize="30sp" />
+
+</RelativeLayout>
