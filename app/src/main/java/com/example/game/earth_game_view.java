@@ -12,7 +12,7 @@ public class earth_game_view extends SurfaceView implements Runnable{
     private int screenX, screenY;
     private Paint paint;
     private float screenRatioX, screenRatioY;
-    private background background1, background2;
+    private earth_background background1, background2;
 
     public earth_game_view(Context context, int screenX, int screenY) {
         super(context);
@@ -23,8 +23,8 @@ public class earth_game_view extends SurfaceView implements Runnable{
         screenRatioX = 2560f / screenX;
         screenRatioY = 1440f / screenY;
 
-        background1 = new background(screenX, screenY, getResources());
-        background2 = new background(screenX, screenY, getResources());
+        background1 = new earth_background(screenX, screenY, getResources());
+        background2 = new earth_background(screenX, screenY, getResources());
 
         background2.x = screenX;
 
@@ -50,11 +50,11 @@ public class earth_game_view extends SurfaceView implements Runnable{
         background1.x -= 10 * screenRatioX;
         background2.x -= 10 * screenRatioX;
 
-        if(background1.x + background1.background.getWidth() < 0 ) {
+        if(background1.x + background1.earth_Background.getWidth() < 0 ) {
             background1.x = screenX;
         }
 
-        if(background2.x + background2.background.getWidth() < 0 ) {
+        if(background2.x + background2.earth_Background.getWidth() < 0 ) {
             background2.x = screenX;
         }
 
@@ -65,8 +65,8 @@ public class earth_game_view extends SurfaceView implements Runnable{
         if (getHolder().getSurface().isValid()){
 
             Canvas canvas = getHolder().lockCanvas();
-            canvas.drawBitmap(background1.background, background1.x, background1.y, paint);
-            canvas.drawBitmap(background2.background, background2.x, background2.y, paint);
+            canvas.drawBitmap(background1.earth_Background, background1.x, background1.y, paint);
+            canvas.drawBitmap(background2.earth_Background, background2.x, background2.y, paint);
 
             getHolder().unlockCanvasAndPost(canvas);
 

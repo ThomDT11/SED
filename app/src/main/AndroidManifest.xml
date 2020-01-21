@@ -9,9 +9,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".earth_game_activity"
+        <activity android:name=".planet4_game_activity"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.noActionBar"></activity>
+            android:theme="@style/AppTheme.noActionBar" />
+        <activity android:name=".planet4_game"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.noActionBar" />
+        <activity
+            android:name=".planet3_game_activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.noActionBar" />
+        <activity
+            android:name=".planet3_game"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.noActionBar" />
+        <activity
+            android:name=".planet2_game_activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.noActionBar" />
+        <activity
+            android:name=".planet2_game"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.noActionBar" />
+        <activity
+            android:name=".earth_game_activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.noActionBar" />
         <activity
             android:name=".earth_game"
             android:screenOrientation="landscape"
