@@ -166,14 +166,14 @@
 
     <TextView
         android:id="@+id/stagethirteen"
-        android:layout_width="141dp"
+        android:layout_width="158dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="31dp"
-        android:layout_marginRight="511dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginRight="494dp"
+        android:layout_marginBottom="45dp"
         android:fontFamily="@font/spaceranger"
         android:text="Stage 13"
         android:textColor="#FF9800"

@@ -58,5 +58,34 @@ public class PlanetScreen extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.image_planet5_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PlanetScreen.this, planet5_game.class));
+            }
+        });
+
+        findViewById(R.id.image_planet6_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PlanetScreen.this, planet6_game.class));
+            }
+        });
+
+        findViewById(R.id.image_planet7_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PlanetScreen.this, planet7_game.class));
+            }
+        });
+
+        findViewById(R.id.image_planet8_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PlanetScreen.this, planet8_game.class));
+            }
+        });
+
+
     }
 }
