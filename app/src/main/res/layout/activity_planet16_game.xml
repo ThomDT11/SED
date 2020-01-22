@@ -37,14 +37,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="277dp"
-        android:layout_marginBottom="258dp"
+        android:layout_marginEnd="274dp"
+        android:layout_marginBottom="202dp"
         android:fontFamily="@font/big_space_demo"
         android:text="Stage XVI"
         android:textColor="#FF9800"
         android:textColorLink="#FF5722"
         android:textSize="40dp"></TextView>
-
 
 
 </RelativeLayout>

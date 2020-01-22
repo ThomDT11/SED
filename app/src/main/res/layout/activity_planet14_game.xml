@@ -39,13 +39,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="277dp"
-        android:layout_marginBottom="258dp"
+        android:layout_marginBottom="201dp"
         android:fontFamily="@font/big_space_demo"
         android:text="Stage XIV"
         android:textColor="#FF9800"
+        android:textColorHighlight="@color/black"
         android:textColorLink="#FF5722"
         android:textSize="40dp"></TextView>
-
 
 
 </RelativeLayout>

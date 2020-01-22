@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".earth_game">
 
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,11 +25,26 @@
         android:textSize="40dp"></TextView>
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="290dp"
+        android:layout_marginBottom="202dp"
+        android:fontFamily="@font/big_space_demo"
+        android:text="Stage-I"
+        android:textColor="#FF9800"
+        android:textColorLink="#FF5722"
+        android:textSize="40dp"></TextView>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/big_space_demo"
-        android:text="EARTH"
+        android:text="Planet I"
         android:textColor="#FF9800"
         android:textColorLink="#FF5722"
         android:textSize="70dp"></TextView>
