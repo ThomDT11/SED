@@ -13,7 +13,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/mainscreenthree" />
 
-
     <ImageView
         android:id="@+id/arrow_next"
         android:layout_width="70dp"
@@ -88,7 +87,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginRight="377dp"
+        android:layout_marginRight="388dp"
         android:layout_marginBottom="194dp"
         android:background="@android:color/transparent"
         android:scaleType="centerInside"
@@ -117,8 +116,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginRight="219dp"
-        android:layout_marginBottom="192dp"
+        android:layout_marginRight="226dp"
+        android:layout_marginBottom="195dp"
         android:background="@android:color/transparent"
         android:scaleType="centerInside"
         android:src="@drawable/yellow_ring_planet"></ImageButton>
@@ -146,8 +145,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginRight="62dp"
-        android:layout_marginBottom="192dp"
+        android:layout_marginRight="76dp"
+        android:layout_marginBottom="194dp"
         android:background="@android:color/transparent"
         android:scaleType="centerInside"
         android:src="@drawable/green_pink_planet"></ImageButton>
@@ -206,7 +205,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginRight="372dp"
+        android:layout_marginRight="379dp"
         android:layout_marginBottom="62dp"
         android:background="@android:color/transparent"
         android:scaleType="centerInside"
@@ -235,8 +234,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginRight="216dp"
-        android:layout_marginBottom="62dp"
+        android:layout_marginRight="225dp"
+        android:layout_marginBottom="64dp"
         android:background="@android:color/transparent"
         android:scaleType="centerInside"
         android:src="@drawable/tech_planet"></ImageButton>
@@ -264,7 +263,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginRight="61dp"
+        android:layout_marginRight="77dp"
         android:layout_marginBottom="64dp"
         android:background="@android:color/transparent"
         android:scaleType="centerInside"

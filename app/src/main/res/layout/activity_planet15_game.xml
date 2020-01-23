@@ -26,7 +26,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
         android:fontFamily="@font/big_space_demo"
         android:text="PLANET-XV"
         android:textColor="#FF9800"
@@ -36,10 +38,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="280dp"
-        android:layout_marginBottom="206dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/big_space_demo"
         android:text="Stage XV"
         android:textColor="#FF9800"
