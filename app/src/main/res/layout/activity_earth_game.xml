@@ -50,4 +50,13 @@
         android:textColorLink="#FF5722"
         android:textSize="70dp"></TextView>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="High Score:"
+        android:id="@+id/highScoreText"
+        android:fontFamily="@font/big_space_demo"
+        android:textColor="#FF9800"
+        android:textSize="25dp"
+        ></TextView>
 </RelativeLayout>

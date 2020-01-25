@@ -20,8 +20,8 @@ public class earth_bullet {
         width = earth_Bullet.getWidth();
         height = earth_Bullet.getHeight();
 
-        width /= 4;
-        height /= 4;
+        width /= 3;
+        height /= 3;
 
         width *= (int) screenRatioX;
         height *= (int) screenRatioY;

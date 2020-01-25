@@ -52,7 +52,7 @@ public class earth_game_start {
         dead = BitmapFactory.decodeResource(res , R.drawable.apolaki_small);
         dead = Bitmap.createScaledBitmap(dead, width, height, false);
 
-        y = screenY /2;
+        y = screenY / 2;
         x = (int) (64 * screenRatioX);
     }
 

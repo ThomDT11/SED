@@ -1,7 +1,10 @@
 package com.example.game;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.MotionEvent;
@@ -13,19 +16,27 @@ import java.util.Random;
 
 public class earth_game_view extends SurfaceView implements Runnable {
 
+
     private Thread thread;
     private Boolean isPlaying, isGameOver = false;
-    private int screenX, screenY;
+    private int screenX, screenY, kill = 0;
     private Paint paint;
     private earth_enemy[] earth_enemies;
     private Random random;
+    private SharedPreferences prefs;
     private List<earth_bullet> earth_bullets;
     private earth_game_start earth_Game_start;
     public static float screenRatioX, screenRatioY;
+    private earth_game_activity activity;
     private earth_background background1, background2;
 
-    public earth_game_view(Context context, int screenX, int screenY) {
-        super(context);
+    public earth_game_view(earth_game_activity activity, int screenX, int screenY) {
+        super(activity);
+
+        this.activity = activity;
+
+        prefs = activity.getSharedPreferences("game", Context.MODE_PRIVATE);
+
 
         this.screenX = screenX;
         this.screenY = screenY;
@@ -43,6 +54,8 @@ public class earth_game_view extends SurfaceView implements Runnable {
         background2.x = screenX;
 
         paint = new Paint();
+        paint.setTextSize(128);
+        paint.setColor(Color.WHITE);
 
         earth_enemies = new earth_enemy[4];
 
@@ -107,6 +120,7 @@ public class earth_game_view extends SurfaceView implements Runnable {
 
                 if(Rect.intersects(earth_enemy.getCollisionShape(), earth_Bullet.getCollisionShape())){
 
+                    kill++;
                     earth_enemy.x = -500;
                     earth_Bullet.x = screenX + 500;
                     earth_enemy.wasShot = true;
@@ -141,7 +155,6 @@ public class earth_game_view extends SurfaceView implements Runnable {
                 earth_enemy.wasShot = false;
 
                 if (Rect.intersects(earth_enemy.getCollisionShape(), earth_Game_start.getCollisionShape())){
-
                        isGameOver = true;
                        return;
                 }
@@ -162,15 +175,20 @@ public class earth_game_view extends SurfaceView implements Runnable {
             canvas.drawBitmap(background1.earth_Background, background1.x, background1.y, paint);
             canvas.drawBitmap(background2.earth_Background, background2.x, background2.y, paint);
 
+            for (earth_enemy earth_enemy : earth_enemies)
+                canvas.drawBitmap(earth_enemy.getearth_enemy(), earth_enemy.x, earth_enemy.y, paint);
+
+            canvas.drawText(kill + "", screenX / 2f, 164,  paint);
+
             if (isGameOver){
                 isPlaying = false;
                 canvas.drawBitmap(earth_Game_start.getDead(), earth_Game_start.x, earth_Game_start.y, paint);
+                saveIfDone();
+                waitBeforeExiting();
                 getHolder().unlockCanvasAndPost(canvas);
                 return;
             }
 
-            for (earth_enemy earth_enemy : earth_enemies)
-                canvas.drawBitmap(earth_enemy.getearth_enemy(), earth_enemy.x, earth_enemy.y, paint);
 
             canvas.drawBitmap(earth_Game_start.getPlanet1_game_start(), earth_Game_start.x,earth_Game_start.y, paint);
 
@@ -181,9 +199,30 @@ public class earth_game_view extends SurfaceView implements Runnable {
 
         }
 
+    }
 
+    private void saveIfDone() {
+
+        if (prefs.getInt("highscore",  0 ) < kill){
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putInt ("highscore", kill);
+            editor.apply();
+
+        }
 
     }
+
+    private void waitBeforeExiting(){
+
+        try {
+            Thread.sleep(2000);
+            activity.startActivity(new Intent(activity, PlanetScreen.class));
+            activity.finish();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void sleep(){
         try {

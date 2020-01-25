@@ -25,8 +25,8 @@ public class earth_enemy {
         width = earth_enemy1.getWidth();
         height = earth_enemy1.getHeight();
 
-        width /= 6;
-        height /= 6;
+        width /= 2;
+        height /= 2;
 
         width *= (int) screenRatioX;
         height *= (int) screenRatioY;
