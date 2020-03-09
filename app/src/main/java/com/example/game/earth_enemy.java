@@ -10,23 +10,23 @@ import static com.example.game.earth_game_view.screenRatioY;
 
 public class earth_enemy {
 
-    public int speed = 20;
+    public int speed = 10;
     public boolean wasShot = true;
     int x, y, width, height, earthEnemyCounter = 1;
     Bitmap earth_enemy1, earth_enemy2, earth_enemy3, earth_enemy4;
 
     earth_enemy (Resources res){
 
-        earth_enemy1 = BitmapFactory.decodeResource(res, R.drawable.e1_hurt_2);
-        earth_enemy2 = BitmapFactory.decodeResource(res, R.drawable.e1_walk_3);
-        earth_enemy3 = BitmapFactory.decodeResource(res, R.drawable.e1_hurt_2);
-        earth_enemy4 = BitmapFactory.decodeResource(res, R.drawable.e1_walk_3);
+        earth_enemy1 = BitmapFactory.decodeResource(res, R.drawable.e1);
+        earth_enemy2 = BitmapFactory.decodeResource(res, R.drawable.e1);
+        earth_enemy3 = BitmapFactory.decodeResource(res, R.drawable.e1);
+        earth_enemy4 = BitmapFactory.decodeResource(res, R.drawable.e1);
 
         width = earth_enemy1.getWidth();
         height = earth_enemy1.getHeight();
 
-        width /= 2;
-        height /= 2;
+        width /= 0.8;
+        height /= 0.8;
 
         width *= (int) screenRatioX;
         height *= (int) screenRatioY;

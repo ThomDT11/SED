@@ -18,8 +18,8 @@ public class earth_game_view extends SurfaceView implements Runnable {
 
 
     private Thread thread;
-    private Boolean isPlaying, isGameOver = false;
-    private int screenX, screenY, kill = 0;
+    private Boolean isPlaying, isGameOver = false, stageFinished = false;
+    private int screenX, screenY, kill = 0, life = 5;
     private Paint paint;
     private earth_enemy[] earth_enemies;
     private Random random;
@@ -125,6 +125,9 @@ public class earth_game_view extends SurfaceView implements Runnable {
                     earth_Bullet.x = screenX + 500;
                     earth_enemy.wasShot = true;
                 }
+                if(kill == 20){
+                    stageFinished = true;
+                }
 
             }
         }
@@ -132,16 +135,17 @@ public class earth_game_view extends SurfaceView implements Runnable {
         for (earth_bullet earth_Bullet : earth_trash)
                 earth_bullets.remove(earth_Bullet);
 
-        for (earth_enemy earth_enemy : earth_enemies){
+        for (earth_enemy earth_enemy : earth_enemies) {
 
             earth_enemy.x -= earth_enemy.speed;
 
-            if (earth_enemy.x + earth_enemy.width < 0){
+            if (earth_enemy.x + earth_enemy.width < 0) {
 
-                if(!earth_enemy.wasShot){
-                    isGameOver = true;
+                if (!earth_enemy.wasShot) {
+                    life--;
                     return;
                 }
+
 
                 int bound = (int) (30 * screenRatioX);
                 earth_enemy.speed = random.nextInt(bound);
@@ -154,16 +158,25 @@ public class earth_game_view extends SurfaceView implements Runnable {
 
                 earth_enemy.wasShot = false;
 
-                if (Rect.intersects(earth_enemy.getCollisionShape(), earth_Game_start.getCollisionShape())){
-                       isGameOver = true;
-                       return;
-                }
 
             }
+            if (Rect.intersects(earth_Game_start.getCollisionShape(), earth_enemy.getCollisionShape())) {
+                life--;
+                earth_enemy.x = -500;
+                earth_enemy.wasShot = true
+                ;
 
-        }
+                }
+            if (life == 0 ){
+                isGameOver = true;
+                return;
+            }
+            }
 
     }
+
+
+
 
 
 
@@ -186,7 +199,13 @@ public class earth_game_view extends SurfaceView implements Runnable {
                 saveIfDone();
                 waitBeforeExiting();
                 getHolder().unlockCanvasAndPost(canvas);
-                return;
+                return ;
+            }
+
+            if (stageFinished){
+                isPlaying = false;
+                saveIfDone();
+                waitBeforeExiting();
             }
 
 
@@ -215,8 +234,8 @@ public class earth_game_view extends SurfaceView implements Runnable {
     private void waitBeforeExiting(){
 
         try {
-            Thread.sleep(2000);
-            activity.startActivity(new Intent(activity, PlanetScreen.class));
+            Thread.sleep(1000);
+            activity.startActivity(new Intent(activity, earth_game.class));
             activity.finish();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -261,10 +280,13 @@ public class earth_game_view extends SurfaceView implements Runnable {
             break;
             case  MotionEvent.ACTION_UP:
                     earth_Game_start.isGoingUp= false;
+
                     if (event.getX() > screenX / 2)
                         earth_Game_start.toShoot++;
             break;
+
         }
+
 
         return true;
     }
@@ -273,13 +295,10 @@ public class earth_game_view extends SurfaceView implements Runnable {
 
         earth_bullet Earth_Bullet = new earth_bullet(getResources());
         Earth_Bullet.x = earth_Game_start.x + earth_Game_start.width;
-        Earth_Bullet.y = earth_Game_start.y + earth_Game_start.height;
+        Earth_Bullet.y = earth_Game_start.y + (earth_Game_start.height/3) ;
 
         earth_bullets.add(Earth_Bullet);
 
     }
 }
-
-
-
 

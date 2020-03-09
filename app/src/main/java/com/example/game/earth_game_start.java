@@ -34,6 +34,8 @@ public class earth_game_start {
         width *= (int) screenRatioX;
         height *= (int) screenRatioY;
 
+
+
         earth_flight1 = Bitmap.createScaledBitmap(earth_flight1, width, height, false);
         earth_flight2 = Bitmap.createScaledBitmap(earth_flight2, width, height, false);
 
@@ -48,6 +50,8 @@ public class earth_game_start {
         earth_shoot3= Bitmap.createScaledBitmap(earth_shoot3, width, height, false);
         earth_shoot4= Bitmap.createScaledBitmap(earth_shoot4, width, height, false);
         earth_shoot5= Bitmap.createScaledBitmap(earth_shoot5, width, height, false);
+
+
 
         dead = BitmapFactory.decodeResource(res , R.drawable.apolaki_small);
         dead = Bitmap.createScaledBitmap(dead, width, height, false);
@@ -98,7 +102,7 @@ public class earth_game_start {
 
 
     Rect getCollisionShape () {
-        return new Rect(x, y, x + width, y + height);
+        return new Rect(x, y, x + width / 2, y + height / 2);
     }
 
     Bitmap getDead(){

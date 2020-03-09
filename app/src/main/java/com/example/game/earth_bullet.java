@@ -15,13 +15,13 @@ public class earth_bullet {
 
     earth_bullet (Resources res){
 
-        earth_Bullet = BitmapFactory.decodeResource(res, R.drawable.shot_1);
+        earth_Bullet = BitmapFactory.decodeResource(res, R.drawable.apolaki_sword);
 
         width = earth_Bullet.getWidth();
         height = earth_Bullet.getHeight();
 
-        width /= 3;
-        height /= 3;
+        width /= 1;
+        height /= 1;
 
         width *= (int) screenRatioX;
         height *= (int) screenRatioY;
