@@ -15,13 +15,13 @@ public class planet2_bullet {
 
     planet2_bullet (Resources res){
 
-        planet2_Bullet = BitmapFactory.decodeResource(res, R.drawable.shot_1);
+        planet2_Bullet = BitmapFactory.decodeResource(res, R.drawable.apolaki_sword);
 
         width = planet2_Bullet.getWidth();
         height = planet2_Bullet.getHeight();
 
-        width /= 3;
-        height /= 3;
+        width /= 1;
+        height /= 1;
 
         width *= (int) screenRatioX;
         height *= (int) screenRatioY;
@@ -31,6 +31,6 @@ public class planet2_bullet {
 
     }
     Rect getCollisionShape () {
-        return new Rect(x, y, x + width, y + height);
+        return new Rect(x, y, x + width / 2, y + height / 2);
     }
 }

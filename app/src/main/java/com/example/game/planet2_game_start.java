@@ -34,6 +34,8 @@ public class planet2_game_start {
         width *= (int) screenRatioX;
         height *= (int) screenRatioY;
 
+
+
         planet2_flight1 = Bitmap.createScaledBitmap(planet2_flight1, width, height, false);
         planet2_flight2 = Bitmap.createScaledBitmap(planet2_flight2, width, height, false);
 
@@ -49,6 +51,8 @@ public class planet2_game_start {
         planet2_shoot4= Bitmap.createScaledBitmap(planet2_shoot4, width, height, false);
         planet2_shoot5= Bitmap.createScaledBitmap(planet2_shoot5, width, height, false);
 
+
+
         dead = BitmapFactory.decodeResource(res , R.drawable.apolaki_small);
         dead = Bitmap.createScaledBitmap(dead, width, height, false);
 
@@ -56,7 +60,7 @@ public class planet2_game_start {
         x = (int) (64 * screenRatioX);
     }
 
-    Bitmap getPlanet2_game_start() {
+    Bitmap getPlanet1_game_start() {
 
         if (toShoot != 0){
 
@@ -98,7 +102,7 @@ public class planet2_game_start {
 
 
     Rect getCollisionShape () {
-        return new Rect(x, y, x + width, y + height);
+        return new Rect(x, y, x + width / 2, y + height / 3);
     }
 
     Bitmap getDead(){

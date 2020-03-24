@@ -57,7 +57,7 @@ public class planet4_boss {
         dead = Bitmap.createScaledBitmap(dead, width, height, false);
 
         y = screenY / 2;
-        x = (int) (1100 * screenRatioX);
+        x = (int) (1400 * screenRatioX);
     }
 
     Bitmap getPlanet4_boss() {

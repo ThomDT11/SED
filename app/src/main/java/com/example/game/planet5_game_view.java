@@ -18,8 +18,8 @@ public class planet5_game_view extends SurfaceView implements Runnable {
 
 
     private Thread thread;
-    private Boolean isPlaying, isGameOver = false;
-    private int screenX, screenY, kill = 0;
+    private Boolean isPlaying, isGameOver = false, stageFinished = false;
+    private int screenX, screenY, kill = 0, life = 5;
     private Paint paint;
     private planet5_enemy[] planet5_enemies;
     private Random random;
@@ -125,6 +125,9 @@ public class planet5_game_view extends SurfaceView implements Runnable {
                     planet5_Bullet.x = screenX + 500;
                     planet5_enemy.wasShot = true;
                 }
+                if(kill == 30){
+                    stageFinished = true;
+                }
 
             }
         }
@@ -132,17 +135,16 @@ public class planet5_game_view extends SurfaceView implements Runnable {
         for (planet5_bullet planet5_Bullet : planet5_trash)
             planet5_bullets.remove(planet5_Bullet);
 
-        for (planet5_enemy planet5_enemy : planet5_enemies){
+        for (planet5_enemy planet5_enemy : planet5_enemies) {
 
             planet5_enemy.x -= planet5_enemy.speed;
 
-            if (planet5_enemy.x + planet5_enemy.width < 0){
+            if (planet5_enemy.x + planet5_enemy.width < 0) {
 
-                if(!planet5_enemy.wasShot){
-                    isGameOver = true;
+                if (!planet5_enemy.wasShot) {
+                    life--;
                     return;
                 }
-
 
 
                 int bound = (int) (30 * screenRatioX);
@@ -158,13 +160,21 @@ public class planet5_game_view extends SurfaceView implements Runnable {
 
 
             }
-            if (Rect.intersects(planet5_Game_start.getCollisionShape(), planet5_enemy.getCollisionShape())){
-                isGameOver = true;
-                return;}
+            if (Rect.intersects(planet5_Game_start.getCollisionShape(), planet5_enemy.getCollisionShape())) {
+                life--;
+                planet5_enemy.x = -500;
+                planet5_enemy.wasShot = true
+                ;
 
+            }
+            if (life == 0 ){
+                isGameOver = true;
+                return;
+            }
         }
 
     }
+
 
 
 
@@ -190,6 +200,12 @@ public class planet5_game_view extends SurfaceView implements Runnable {
                 waitBeforeExiting();
                 getHolder().unlockCanvasAndPost(canvas);
                 return ;
+            }
+
+            if (stageFinished){
+                isPlaying = false;
+                saveIfDone();
+                waitBeforeExiting();
             }
 
 
@@ -218,7 +234,7 @@ public class planet5_game_view extends SurfaceView implements Runnable {
     private void waitBeforeExiting(){
 
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             activity.startActivity(new Intent(activity, planet5_game.class));
             activity.finish();
         } catch (InterruptedException e) {
@@ -279,7 +295,7 @@ public class planet5_game_view extends SurfaceView implements Runnable {
 
         planet5_bullet planet5_Bullet = new planet5_bullet(getResources());
         planet5_Bullet.x = planet5_Game_start.x + planet5_Game_start.width;
-        planet5_Bullet.y = planet5_Game_start.y + (planet5_Game_start.height/3) ;
+        planet5_Bullet.y = planet5_Game_start.y + (planet5_Game_start.height/10) ;
 
         planet5_bullets.add(planet5_Bullet);
 

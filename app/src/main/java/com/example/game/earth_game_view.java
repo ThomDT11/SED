@@ -295,7 +295,7 @@ public class earth_game_view extends SurfaceView implements Runnable {
 
         earth_bullet Earth_Bullet = new earth_bullet(getResources());
         Earth_Bullet.x = earth_Game_start.x + earth_Game_start.width;
-        Earth_Bullet.y = earth_Game_start.y + (earth_Game_start.height/3) ;
+        Earth_Bullet.y = earth_Game_start.y + (earth_Game_start.height/10) ;
 
         earth_bullets.add(Earth_Bullet);
 

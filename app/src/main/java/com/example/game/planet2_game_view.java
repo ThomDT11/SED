@@ -18,8 +18,8 @@ public class planet2_game_view extends SurfaceView implements Runnable {
 
 
     private Thread thread;
-    private Boolean isPlaying, isGameOver = false;
-    private int screenX, screenY, kill = 0;
+    private Boolean isPlaying, isGameOver = false, stageFinished = false;
+    private int screenX, screenY, kill = 0, life = 5;
     private Paint paint;
     private planet2_enemy[] planet2_enemies;
     private Random random;
@@ -125,6 +125,9 @@ public class planet2_game_view extends SurfaceView implements Runnable {
                     planet2_Bullet.x = screenX + 500;
                     planet2_enemy.wasShot = true;
                 }
+                if(kill == 30){
+                    stageFinished = true;
+                }
 
             }
         }
@@ -132,16 +135,17 @@ public class planet2_game_view extends SurfaceView implements Runnable {
         for (planet2_bullet planet2_Bullet : planet2_trash)
             planet2_bullets.remove(planet2_Bullet);
 
-        for (planet2_enemy planet2_enemy : planet2_enemies){
+        for (planet2_enemy planet2_enemy : planet2_enemies) {
 
             planet2_enemy.x -= planet2_enemy.speed;
 
-            if (planet2_enemy.x + planet2_enemy.width < 0){
+            if (planet2_enemy.x + planet2_enemy.width < 0) {
 
-                if(!planet2_enemy.wasShot){
-                    isGameOver = true;
+                if (!planet2_enemy.wasShot) {
+                    life--;
                     return;
                 }
+
 
                 int bound = (int) (30 * screenRatioX);
                 planet2_enemy.speed = random.nextInt(bound);
@@ -154,16 +158,25 @@ public class planet2_game_view extends SurfaceView implements Runnable {
 
                 planet2_enemy.wasShot = false;
 
-                if (Rect.intersects(planet2_enemy.getCollisionShape(), planet2_Game_start.getCollisionShape())){
-                    isGameOver = true;
-                    return;
-                }
 
             }
+            if (Rect.intersects(planet2_Game_start.getCollisionShape(), planet2_enemy.getCollisionShape())) {
+                life--;
+                planet2_enemy.x = -500;
+                planet2_enemy.wasShot = true
+                ;
 
+            }
+            if (life == 0 ){
+                isGameOver = true;
+                return;
+            }
         }
 
     }
+
+
+
 
 
 
@@ -186,11 +199,17 @@ public class planet2_game_view extends SurfaceView implements Runnable {
                 saveIfDone();
                 waitBeforeExiting();
                 getHolder().unlockCanvasAndPost(canvas);
-                return;
+                return ;
+            }
+
+            if (stageFinished){
+                isPlaying = false;
+                saveIfDone();
+                waitBeforeExiting();
             }
 
 
-            canvas.drawBitmap(planet2_Game_start.getPlanet2_game_start(), planet2_Game_start.x,planet2_Game_start.y, paint);
+            canvas.drawBitmap(planet2_Game_start.getPlanet1_game_start(), planet2_Game_start.x,planet2_Game_start.y, paint);
 
             for(planet2_bullet planet2Bullet : planet2_bullets)
                 canvas.drawBitmap(planet2Bullet.planet2_Bullet, planet2Bullet.x, planet2Bullet.y, paint);
@@ -215,7 +234,7 @@ public class planet2_game_view extends SurfaceView implements Runnable {
     private void waitBeforeExiting(){
 
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             activity.startActivity(new Intent(activity, planet2_game.class));
             activity.finish();
         } catch (InterruptedException e) {
@@ -261,10 +280,13 @@ public class planet2_game_view extends SurfaceView implements Runnable {
                 break;
             case  MotionEvent.ACTION_UP:
                 planet2_Game_start.isGoingUp= false;
+
                 if (event.getX() > screenX / 2)
                     planet2_Game_start.toShoot++;
                 break;
+
         }
+
 
         return true;
     }
@@ -273,13 +295,10 @@ public class planet2_game_view extends SurfaceView implements Runnable {
 
         planet2_bullet planet2_Bullet = new planet2_bullet(getResources());
         planet2_Bullet.x = planet2_Game_start.x + planet2_Game_start.width;
-        planet2_Bullet.y = planet2_Game_start.y + planet2_Game_start.height;
+        planet2_Bullet.y = planet2_Game_start.y + (planet2_Game_start.height/10) ;
 
         planet2_bullets.add(planet2_Bullet);
 
     }
 }
-
-
-
 

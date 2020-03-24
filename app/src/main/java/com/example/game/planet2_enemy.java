@@ -25,8 +25,8 @@ public class planet2_enemy {
         width = planet2_enemy1.getWidth();
         height = planet2_enemy1.getHeight();
 
-        width /= 2;
-        height /= 2;
+        width /= 0.8;
+        height /= 0.8;
 
         width *= (int) screenRatioX;
         height *= (int) screenRatioY;

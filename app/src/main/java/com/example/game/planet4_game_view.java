@@ -118,7 +118,6 @@ public class planet4_game_view extends SurfaceView implements Runnable {
             planet4_Boss.y = 0;
 
 
-
         if (planet4_Boss.y > screenY - planet4_Boss.height)
             planet4_Boss.y = screenY - planet4_Boss.height;
 
@@ -331,7 +330,7 @@ public class planet4_game_view extends SurfaceView implements Runnable {
 
         planet4_bullet planet4_Bullet = new planet4_bullet(getResources());
         planet4_Bullet.x = planet4_Game_start.x + planet4_Game_start.width;
-        planet4_Bullet.y = planet4_Game_start.y + (planet4_Game_start.height/3) ;
+        planet4_Bullet.y = planet4_Game_start.y + (planet4_Game_start.height/10) ;
 
         planet4_bullets.add(planet4_Bullet);
 
