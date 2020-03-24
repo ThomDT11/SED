@@ -20,8 +20,8 @@ public class planet5_bullet {
         width = planet5_Bullet.getWidth();
         height = planet5_Bullet.getHeight();
 
-        width /= 15;
-        height /= 15;
+        width /= 1;
+        height /= 1;
 
         width *= (int) screenRatioX;
         height *= (int) screenRatioY;

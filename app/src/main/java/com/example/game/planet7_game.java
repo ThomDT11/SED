@@ -24,5 +24,12 @@ public class planet7_game extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.home_button_setting).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(planet7_game.this, PlanetScreen.class));
+            }
+        });
+
     }
 }

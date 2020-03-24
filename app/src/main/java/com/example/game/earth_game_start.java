@@ -102,7 +102,7 @@ public class earth_game_start {
 
 
     Rect getCollisionShape () {
-        return new Rect(x, y, x + width / 2, y + height / 2);
+        return new Rect(x, y, x + width / 2, y + height / 3);
     }
 
     Bitmap getDead(){

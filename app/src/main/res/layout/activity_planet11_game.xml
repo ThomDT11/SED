@@ -13,11 +13,28 @@
         android:src="@drawable/bg_11"></ImageView>
 
 
+    <ImageButton
+        android:id="@+id/home_button_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="289dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="-9dp"
+        android:layout_marginBottom="285dp"
+        android:background="@android:color/transparent"
+        android:scaleType="center"
+        android:src="@drawable/home_button"></ImageButton>
+
     <TextView
         android:id="@+id/planet_11_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="107dp"
         android:fontFamily="@font/spacerangertitle"
         android:text="START"
         android:textColor="@android:color/holo_orange_dark"
@@ -28,9 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="58dp"
         android:fontFamily="@font/big_space_demo"
-        android:text="PLANET-XI"
+        android:text="PLANET OF FURY"
         android:textColor="#FF9800"
         android:textColorLink="#FF5722"
         android:textSize="70dp"></TextView>
@@ -41,7 +58,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="false"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="135dp"
         android:layout_marginEnd="0dp"
         android:fontFamily="@font/big_space_demo"
         android:text="Stage XI"
